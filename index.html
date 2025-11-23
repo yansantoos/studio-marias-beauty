@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Maria's Beauty | Luxo em Cabelo, Madeixas & Beleza</title>
+  <meta name="description" content="Studio Maria's Beauty em Leiria: alisamento orgânico 100% liso, madeixas de alto padrão, terapia capilar, unhas e sobrancelhas num espaço intimista e exclusivo em Marrazes, Leiria.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050506;
+      --bg-darker: #020203;
+      --gold: #d6b35f;
+      --gold-light: #f2d892;
+      --text-light: #f5f5f5;
+      --text-muted: #c0b8a6;
+      --card-bg: rgba(15, 15, 20, 0.9);
+      --border-gold: rgba(214,179,95,0.35);
+      --transition: all 0.3s ease;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+      --radius-xl: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #17110a 0, #050506 35%, #000 100%);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050506;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    .container {
+      width: min(1120px, 94%);
+      margin: 0 auto;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background: radial-gradient(circle at top, rgba(214,179,95,0.18) 0, rgba(5,5,6,0.96) 40%, rgba(2,2,3,0.98) 100%);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, var(--gold-light), var(--gold) 55%, #7b5a20 100%);
+      box-shadow: 0 0 18px rgba(214,179,95,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-circle img {
+      width: 115%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold));
+      border-radius: 999px;
+      transform: translateX(-50%);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-nav {
+      padding: 0.55rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(242,216,146,0.7);
+      background: radial-gradient(circle at top left, rgba(242,216,146,0.45), rgba(20,15,8,0.98));
+      color: #111;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.75);
+      transition: var(--transition);
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+      filter: brightness(1.05);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--gold-light);
+      border-radius: 999px;
+    }
+
+    @media (max-width: 840px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-mobile {
+        position: fixed;
+        inset: 60px 0 auto 0;
+        background: radial-gradient(circle at top, rgba(214,179,95,0.1), #050506 40%, #000 100%);
+        border-bottom: 1px solid rgba(214,179,95,0.3);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.85);
+        padding: 1rem 0;
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        z-index: 40;
+      }
+
+      .nav-mobile a {
+        padding: 0.45rem 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .nav-mobile a:hover {
+        color: var(--gold-light);
+      }
+
+      .nav-mobile.show {
+        display: flex;
+      }
+    }
+
+    /* HERO */
+    main {
+      padding-top: 82px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle at top left, rgba(242,216,146,0.12), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(242,216,146,0.06), transparent 55%);
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.3rem, 3.4vw + 1rem, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 30rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .tag-chip {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(214,179,95,0.4);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      background: rgba(10,8,4,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.95rem 2.3rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: linear-gradient(120deg, var(--gold-light), var(--gold));
+      color: #15110a;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.85);
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 55px rgba(0,0,0,0.95);
+      filter: brightness(1.04);
+    }
+
+    .btn-ghost {
+      padding: 0.9rem 1.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(214,179,95,0.5);
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: var(--transition);
+    }
+
+    .btn-ghost span.icon {
+      font-size: 1.1rem;
+      margin-top: -2px;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(214,179,95,0.06);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(242,216,146,0.16), rgba(10,8,5,0.96));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(214,179,95,0.42);
+      padding: 1.6rem 1.6rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(242,216,146,0.2), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-card-logo img {
+      width: 65%;
+      max-width: 260px;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 32px rgba(242,216,146,0.85));
+    }
+
+    .hero-card-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-sub {
+      text-align: center;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      background: rgba(6,5,4,0.88);
+      border-radius: 18px;
+      padding: 0.7rem 0.6rem;
+      border: 1px solid rgba(214,179,95,0.35);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+    }
+
+    .stat span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.9rem;
+      border-top: 1px solid rgba(214,179,95,0.28);
+      padding-top: 0.9rem;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-footer strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    @media (max-width: 960px) {
+      .hero-card-logo img {
+        width: 58%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4.2rem 0 4.6rem;
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at top left, rgba(214,179,95,0.08), transparent 60%),
+        radial-gradient(circle at bottom, rgba(214,179,95,0.04), transparent 60%);
+      z-index: -1;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2.6rem;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin: 0.4rem auto 0;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-text p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-gold);
+      background: rgba(10,9,7,0.96);
+      color: var(--text-light);
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.6rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .about-list li span.icon {
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      margin-top: 0.1rem;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 1000px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(242,216,146,0.15), transparent 60%);
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 65px rgba(0,0,0,0.95);
+      border-color: rgba(242,216,146,0.75);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .service-note {
+      font-size: 0.75rem;
+      color: var(--gold-light);
+    }
+
+    /* EXPERIENCE */
+    .experience {
+      background: radial-gradient(circle at top, #15100b, #050506 55%, #000 100%);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .experience-steps {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      background: rgba(10,9,7,0.9);
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .experience-box {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .experience-box strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* GALERIA */
+    .gallery {
+      background: radial-gradient(circle at top, #0c0906, #050506 55%, #000 100%);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(214,179,95,0.35);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item span {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: rgba(0,0,0,0.75);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(214,179,95,0.55);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 1000px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.4rem 1.3rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      color: rgba(214,179,95,0.2);
+      top: -20px;
+      left: 16px;
+    }
+
+    .testimonial p {
+      margin-bottom: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    .testimonial-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .stars {
+      color: var(--gold-light);
+      font-size: 0.8rem;
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pricing-table {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .pricing-row:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-row span:first-child {
+      color: var(--text-muted);
+    }
+
+    .pricing-row span.price {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.9rem;
+    }
+
+    .pricing-highlight {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-highlight strong {
+      color: var(--gold-light);
+    }
+
+    /* BOOKING */
+    .booking {
+      background: radial-gradient(circle at top, #15100b, #050506 60%, #000 100%);
+    }
+
+    .booking-box {
+      background: linear-gradient(120deg, rgba(214,179,95,0.16), rgba(5,5,6,0.98));
+      border-radius: 34px;
+      border: 1px solid rgba(214,179,95,0.7);
+      box-shadow: var(--shadow-soft);
+      padding: 1.9rem 1.6rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .booking-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .booking-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .booking-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .booking-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .booking-info strong {
+      color: var(--gold-light);
+    }
+
+    .booking-right {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(5,5,6,0.92);
+      padding: 1.1rem 1rem;
+      border-radius: 24px;
+      border: 1px solid rgba(214,179,95,0.45);
+    }
+
+    .booking-right p + p {
+      margin-top: 0.6rem;
+    }
+
+    .booking-form {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .booking-form label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 0.55rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid rgba(214,179,95,0.4);
+      background: rgba(6,5,4,0.96);
+      color: var(--text-light);
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .booking-form textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    /* FAQ & CONTACT */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.6rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .faq-q {
+      font-size: 0.93rem;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .contact-line {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-line strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(214,179,95,0.5);
+      background: rgba(6,5,4,0.95);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .social-pill:hover {
+      background: rgba(214,179,95,0.12);
+    }
+
+    .map-wrapper {
+      margin-top: 1rem;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(214,179,95,0.4);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 1.3rem 0 1.8rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner span strong {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+/* ESTILO DA LOGO DO TOPO */
+.logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.85);
+}
+
+.logo-circle img {
+  width: 108%;
+  height: auto;
+}
+/* esconder menu mobile por enquanto */
+.nav-mobile {
+  display: none;
+}
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <div class="logo-circle">
+          <!-- usa logo-studio.png na mesma pasta -->
+          <img src="logo-studio.png" alt="Logo Maria's Beauty">
+        </div>
+        <div class="brand-text">
+          <span>Maria's Beauty</span>
+          <span>Studio de beleza premium em Leiria</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#galeria">Resultados</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#marcacoes">Marcações</a>
+        <a href="#contactos">Contactos</a>
+        <button class="btn-nav" onclick="scrollToSection('marcacoes')">Reservar agora</button>
+      </nav>
+
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#galeria">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#marcacoes">Marcações</a>
+      <a href="#contactos">Contactos</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Studio Maria's Beauty · Marrazes · Leiria</div>
+          <h1 class="hero-title">
+            Beleza <span>exclusiva</span> para mulheres que exigem mais do que um simples salão.
+          </h1>
+          <p class="hero-subtitle">
+            Um studio intimista, especializado em alisamento orgânico 100% liso, madeixas de alto padrão,
+            terapia capilar, sobrancelhas e unhas — pensado para quem quer sentir-se cuidada em cada detalhe.
+          </p>
+
+          <div class="hero-highlights">
+            <span class="tag-chip">Atendimento por marcação</span>
+            <span class="tag-chip">Poucas vagas por dia</span>
+            <span class="tag-chip">Experiência premium em Marrazes</span>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="openWhatsApp()">
+              Reservar pelo WhatsApp
+            </button>
+            <button class="btn-ghost" onclick="scrollToSection('servicos')">
+              <span class="icon">↓</span>
+              Ver serviços
+            </button>
+          </div>
+
+          <p class="hero-note">
+            <strong>Primeira visita?</strong> Personalizamos o atendimento de acordo com a necessidade do seu cabelo,
+            estilo de vida e rotina. Sente-se, relaxe e deixe-nos cuidar de si.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="hero-card-logo">
+              <img src="logo-studio.png" alt="Maria's Beauty">
+            </div>
+            <div class="hero-card-title">Studio Maria's Beauty</div>
+            <div class="hero-card-sub">
+              Um espaço elegante, silencioso e pensado para que cada cliente se sinta única.
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>100%</strong>
+                <span>Alisamento orgânico liso e brilhante</span>
+              </div>
+              <div class="stat">
+                <strong>Luxo</strong>
+                <span>Materiais, produtos e técnica de alto padrão</span>
+              </div>
+              <div class="stat">
+                <strong>Experiência</strong>
+                <span>Formações com especialistas em cabelos e madeixas</span>
+              </div>
+            </div>
+            <div class="hero-card-footer">
+              <span>Localização: <strong>Rua das Laranjeiras, 44B · Marrazes · Leiria</strong></span>
+              <span>Atendimento com hora marcada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container about-grid reveal">
+        <div class="about-text">
+          <div class="section-eyebrow">Sobre o Studio</div>
+          <h2 class="section-title">Mais do que cabelo. Um ritual de autocuidado.</h2>
+          <p>
+            No Studio Maria's Beauty, cada detalhe é pensado para lhe proporcionar uma experiência tranquila,
+            elegante e profundamente personalizada. Acreditamos que um bom atendimento começa muito antes da tesoura:
+            começa na escuta atenta, no diagnóstico correto e na escolha dos produtos certos.
+          </p>
+          <p>
+            Trabalhamos com <strong>alisamento orgânico 100% liso</strong>, madeixas sofisticadas, tratamentos
+            de terapia capilar, design de sobrancelhas e unhas cuidadosamente executadas — sempre com foco na saúde
+            dos fios, na durabilidade dos resultados e numa imagem que combina com quem você é.
+          </p>
+          <p>
+            Aqui não existe atendimento apressado. Cada cliente é recebida como se fosse a única, num ambiente
+            intimista, com atmosfera de spa urbano e uma equipa dedicada a fazer com que se sinta ainda mais confiante.
+          </p>
+
+          <div class="about-badges">
+            <span class="badge">Formação contínua com especialistas</span>
+            <span class="badge">Foco na saúde do cabelo</span>
+            <span class="badge">Ambiente discreto e confortável</span>
+          </div>
+        </div>
+
+        <aside class="about-card">
+          <h3 style="font-family: 'Playfair Display', serif; font-size:1.05rem; margin-bottom:0.6rem;">
+            O que torna a experiência Maria's Beauty única?
+          </h3>
+          <ul class="about-list">
+            <li>
+              <span class="icon">★</span>
+              <span><strong>Diagnóstico personalizado:</strong> avaliamos o histórico do seu cabelo, a rotina
+                e o objetivo final – não aplicamos um procedimento padrão para todas.</span>
+            </li>
+            <li>
+              <span class="icon">★</span>
+              <span><strong>Produtos selecionados:</strong> trabalhamos com linhas profissionais de alta performance,
+                adequadas ao tipo de fio e ao resultado desejado.</span>
+            </li>
+            <li>
+              <span class="icon">★</span>
+              <span><strong>Agenda pensada em si:</strong> número reduzido de clientes por período, para que
+                possa desfrutar do momento sem pressas e sem ambiente de “salão cheio”.</span>
+            </li>
+            <li>
+              <span class="icon">★</span>
+              <span><strong>Resultado Instagramável:</strong> cabelo alinhado, brilho espelhado e acabamento
+                perfeito para fotos, eventos e para o dia a dia.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="container reveal">
+        <div class="section-heading">
+          <div class="section-eyebrow">Serviços principais</div>
+          <h2 class="section-title">Especialidades do Studio</h2>
+          <p class="section-subtitle">
+            Cada serviço é executado com técnica, cuidado e atenção aos detalhes, para que saia sempre com
+            a sensação de ter feito a escolha certa.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-tag">Cabelo · Premium</div>
+            <h3 class="service-title">Alisamento orgânico 100% liso</h3>
+            <p class="service-desc">
+              Técnica exclusiva com foco em fios alinhados, brilho intenso e toque sedoso, mantendo o cabelo
+              bonito e saudável. Ideal para quem quer praticidade no dia a dia sem abrir mão de um visual sofisticado.
+            </p>
+            <p class="service-note">
+              Indicado após diagnóstico personalizado. Perfeito para quem deseja dizer adeus ao frizz.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-tag">Coloração & Luzes</div>
+            <h3 class="service-title">Madeixas & loiros de alto padrão</h3>
+            <p class="service-desc">
+              Madeixas desenhadas fio a fio, com transições suaves e acabamento luminoso. Trabalhamos para
+              alcançar o tom ideal respeitando o limite do seu cabelo, com proteção e tratamentos específicos.
+            </p>
+            <p class="service-note">
+              Combinação perfeita entre técnica, bom gosto e produtos de qualidade profissional.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-tag">Tratamento</div>
+            <h3 class="service-title">Terapia capilar & nutrição profunda</h3>
+            <p class="service-desc">
+              Protocolos direcionados para recuperar brilho, força e densidade, ajudando no combate a queda,
+              ressecamento e danos causados por químicas anteriores.
+            </p>
+            <p class="service-note">
+              Tratamentos adaptados ao diagnóstico do couro cabeludo e comprimento dos fios.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-tag">Olhar & Expressão</div>
+            <h3 class="service-title">Sobrancelhas desenhadas à medida</h3>
+            <p class="service-desc">
+              Design de sobrancelhas que respeita o seu formato natural, realçando o olhar sem exageros.
+              Para quem gosta de um resultado limpo, elegante e harmonioso com o rosto.
+            </p>
+            <p class="service-note">
+              Possibilidade de manutenção periódica para manter o desenho sempre perfeito.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-tag">Mãos & Detalhes</div>
+            <h3 class="service-title">Unhas cuidadas com delicadeza</h3>
+            <p class="service-desc">
+              Serviço de unhas para mãos impecáveis: acabamento preciso, cores selecionadas e atenção a detalhes,
+              num ambiente confortável e acolhedor.
+            </p>
+            <p class="service-note">
+              Ideal para combinar com o seu atendimento de cabelo e sair pronta para qualquer compromisso.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-tag">Experiência completa</div>
+            <h3 class="service-title">Pacotes personalizados</h3>
+            <p class="service-desc">
+              Combine serviços de cabelo, tratamento, sobrancelhas e unhas numa única visita, com condições especiais.
+              Indicados para dias importantes, eventos, viagens ou simplesmente para renovar a autoestima.
+            </p>
+            <p class="service-note">
+              Fale connosco para criar o pacote ideal para si.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="experience">
+      <div class="container experience-grid reveal">
+        <div>
+          <div class="section-eyebrow">A sua visita</div>
+          <h2 class="section-title">Como é a experiência no Studio?</h2>
+          <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1.3rem;">
+            Desde o primeiro contacto até ao resultado final, cada etapa foi pensada para que se sinta acolhida,
+            segura e confiante com o que está a ser feito no seu cabelo e na sua imagem.
+          </p>
+
+          <div class="experience-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <div class="step-title">Marcação pelo WhatsApp</div>
+                <div class="step-text">
+                  Começamos com uma conversa clara pela mensagem, para entender o que pretende e
+                  orientar sobre o serviço mais indicado.
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <div class="step-title">Diagnóstico e explicação</div>
+                <div class="step-text">
+                  Já no studio, avaliamos o seu cabelo com calma e explicamos cada etapa do procedimento,
+                  produtos utilizados e expectativas de resultado.
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <div class="step-title">Momento de cuidado</div>
+                <div class="step-text">
+                  Você senta, relaxa e deixa-nos cuidar de tudo: técnica, tempo de ação, acabamento e finalização.
+                  O objetivo é que se sinta num pequeno refúgio só seu.
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">4</div>
+              <div>
+                <div class="step-title">Resultado & manutenção</div>
+                <div class="step-text">
+                  No final, mostramos as melhores formas de manter o resultado em casa e indicamos quando deverá
+                  ser a próxima visita para manter o cabelo sempre impecável.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="experience-box">
+          <p>
+            <strong>Ambiente:</strong> luz suave, detalhes em dourado, espaço organizado e silencioso,
+            pensado para que se desligue da correria do dia a dia.
+          </p>
+          <p style="margin-top:0.7rem;">
+            <strong>Filosofia:</strong> menos é mais – menos quantidade de pessoas ao mesmo tempo, mais atenção,
+            mais cuidado e mais qualidade em cada serviço. Aqui você não é “mais uma cliente”; é a protagonista do dia.
+          </p>
+          <p style="margin-top:0.7rem;">
+            <strong>Objetivo:</strong> que saia do Studio a sentir-se ainda mais bonita, confiante e com a certeza de
+            que encontrou o seu lugar de confiança em Leiria para cuidar da sua beleza.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="gallery">
+      <div class="container reveal">
+        <div class="section-heading">
+          <div class="section-eyebrow">Resultados reais</div>
+          <h2 class="section-title">Alguns dos nossos trabalhos</h2>
+          <p class="section-subtitle">
+            Cabelos reais, resultados reais — loiros, cores vibrantes, morenas iluminadas e lisos com brilho de espelho.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="cabelo-loiro-ondas.jpg" alt="Loiro com ondas no Studio Maria's Beauty">
+            <span>Loiro iluminado</span>
+          </div>
+          <div class="gallery-item">
+            <img src="cabelo-vermelho.jpg" alt="Cabelo vermelho intenso no Studio Maria's Beauty">
+            <span>Cor vibrante</span>
+          </div>
+          <div class="gallery-item">
+            <img src="loiro-platinado.jpg" alt="Loiro platinado no Studio Maria's Beauty">
+            <span>Loiro de alto padrão</span>
+          </div>
+          <div class="gallery-item">
+            <img src="morena-iluminada.jpg" alt="Morena iluminada no Studio Maria's Beauty">
+            <span>Morena iluminada</span>
+          </div>
+          <div class="gallery-item">
+            <img src="liso-brilho-espelho.jpg" alt="Cabelo liso com brilho de espelho">
+            <span>Liso espelhado</span>
+          </div>
+        <div class="gallery-item">
+  <img src="loiro-natural-liso.jpg" alt="Loira natural com liso brilhante no Studio Maria's Beauty">
+  <span>Loira natural · Liso brilhante</span>
+</div>
+<div class="gallery-item">
+  <img src="resultado-cliente.jpg" alt="Resultado de cliente no Studio Maria's Beauty">
+  <span>Resultado de cliente</span>
+</div>
+</div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="container reveal">
+        <div class="section-heading">
+          <div class="section-eyebrow">Depoimentos</div>
+          <h2 class="section-title">O que as clientes dizem</h2>
+          <p class="section-subtitle">
+            As palavras de quem já viveu a experiência Maria's Beauty.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <p>
+              “Saí do studio com a sensação de ter encontrado finalmente alguém que entende o que eu quero.
+              O alisamento ficou perfeito, zero frizz e um brilho que não conseguia em nenhum outro lugar.”
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Ana R.</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <p>
+              “As madeixas ficaram exatamente como imaginei: suaves, elegantes e sem danificar o cabelo.
+              O atendimento é calmo, atencioso e o ambiente é lindíssimo. Dá vontade de voltar sempre.”
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Carolina M.</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <p>
+              “Adorei poder fazer cabelo e unhas no mesmo dia, com toda a tranquilidade. É um espaço discreto
+              e muito acolhedor. Senti-me tratada com carinho do início ao fim.”
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Vera S.</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREÇOS -->
+    <section id="precos">
+      <div class="container pricing-grid reveal">
+        <div>
+          <div class="section-eyebrow">Investimento em si</div>
+          <h2 class="section-title">Transparência & Exclusividade</h2>
+          <p class="pricing-highlight">
+            Preferimos conversar consigo para indicar o melhor serviço e valor, de acordo com o estado atual
+            do seu cabelo. Abaixo, partilhamos uma <strong>base de referência</strong> para que tenha uma ideia
+            do nível de investimento.
+          </p>
+
+          <div class="pricing-table" style="margin-top:1.4rem;">
+            <div class="pricing-row">
+              <span>Alisamento orgânico 100% liso</span>
+              <span class="price">sob consulta</span>
+            </div>
+            <div class="pricing-row">
+              <span>Madeixas / loiro premium</span>
+              <span class="price">sob consulta</span>
+            </div>
+            <div class="pricing-row">
+              <span>Terapia capilar / tratamento</span>
+              <span class="price">sob consulta</span>
+            </div>
+            <div class="pricing-row">
+              <span>Design de sobrancelhas</span>
+              <span class="price">sob consulta</span>
+            </div>
+            <div class="pricing-row">
+              <span>Unhas</span>
+              <span class="price">sob consulta</span>
+            </div>
+          </div>
+
+          <p class="pricing-note">
+            Valores podem variar conforme comprimento, densidade, histórico de químicas e objetivos de cor
+            ou transformação. Durante o diagnóstico, explicamos tudo com clareza.
+          </p>
+        </div>
+
+        <aside class="pricing-table">
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:0.7rem;">
+            Porque cuidar da sua imagem aqui faz sentido?
+          </h3>
+          <ul class="about-list">
+            <li><span class="icon">✓</span><span>Economiza tempo: resultados duradouros, que facilitam a rotina.</span></li>
+            <li><span class="icon">✓</span><span>Confiança: atendimento com escuta, explicação e honestidade sobre o que é possível fazer.</span></li>
+            <li><span class="icon">✓</span><span>Autocuidado: reservar um momento só para si, num ambiente elegante e acolhedor.</span></li>
+            <li><span class="icon">✓</span><span>Imagem alinhada com quem você é: resultados sofisticados, sem exageros.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MARCAÇÕES + FORM WHATSAPP -->
+    <section id="marcacoes" class="booking">
+      <div class="container reveal">
+        <div class="section-heading">
+          <div class="section-eyebrow">Marcações</div>
+          <h2 class="section-title">Reserve o seu momento no Studio</h2>
+          <p class="section-subtitle">
+            Pode marcar diretamente pelo WhatsApp ou preencher o formulário que envia a sua marcação automática para o nosso número.
+          </p>
+        </div>
+
+        <div class="booking-box">
+          <div>
+            <h3 class="booking-title">Marcação direta pelo WhatsApp</h3>
+            <p class="booking-text">
+              Clique no botão abaixo, conte-nos um pouco sobre o seu cabelo e o que pretende fazer.
+              Vamos ajudá-la a escolher o melhor dia, horário e serviço para si.
+            </p>
+
+            <button class="btn-primary" onclick="openWhatsApp()">
+              Abrir WhatsApp para agendar
+            </button>
+
+            <p class="booking-info" style="margin-top:1rem;">
+              <strong>Horário de funcionamento:</strong><br>
+              Segunda a sexta das 10h00 às 17h00 · Sábado das 10h00 às 15h00<br>
+              Atendimento sempre com marcação prévia.
+            </p>
+
+            <form class="booking-form" onsubmit="submitBookingForm(event)">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="O seu nome" required>
+
+              <label for="telefone">WhatsApp</label>
+              <input type="text" id="telefone" name="telefone" placeholder="O seu número (opcional)">
+
+              <label for="servico">Serviço desejado</label>
+              <select id="servico" name="servico" required>
+                <option value="">Selecione…</option>
+                <option>Alisamento orgânico 100% liso</option>
+                <option>Madeixas / loiro</option>
+                <option>Terapia capilar / tratamento</option>
+                <option>Sobrancelhas</option>
+                <option>Unhas</option>
+                <option>Pacote completo</option>
+              </select>
+
+              <label for="quando">Melhor dia/horário</label>
+              <input type="text" id="quando" name="quando" placeholder="Ex.: próxima sexta de manhã">
+
+              <label for="obs">Observações</label>
+              <textarea id="obs" name="obs" placeholder="Conte um pouco sobre o seu cabelo ou objetivo (opcional)"></textarea>
+
+              <button type="submit" class="btn-primary">
+                Enviar marcação para o WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <div class="booking-right">
+            <p><strong>Antes de marcar, pode enviar:</strong></p>
+            <p>• Uma foto atual do seu cabelo (de preferência com boa luz).<br>
+               • Há quanto tempo realizou química, coloração ou alisamento.<br>
+               • O resultado que gostaria de alcançar.</p>
+            <p>
+              Assim conseguimos orientar melhor o tempo de atendimento e sugerir os cuidados ideais para o seu caso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / CONTACTOS + MAPA -->
+    <section id="contactos">
+      <div class="container faq-grid reveal">
+        <div>
+          <div class="section-eyebrow">Dúvidas frequentes</div>
+          <h2 class="section-title">Perguntas & Respostas</h2>
+
+          <div class="faq-item">
+            <div class="faq-q">O alisamento orgânico estraga o cabelo?</div>
+            <div class="faq-a">
+              O nosso foco é sempre na saúde do fio. Trabalhamos com produtos profissionais, seguindo protocolos
+              corretos e apenas após diagnóstico. Explicamos tudo antes do procedimento.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Posso fazer madeixas e alisamento?</div>
+            <div class="faq-a">
+              Em muitos casos é possível, desde que bem planeado. Por isso avaliamos o histórico do seu cabelo
+              e, se necessário, indicamos um plano em etapas para chegar ao resultado com segurança.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Quanto tempo dura o atendimento?</div>
+            <div class="faq-a">
+              Depende do serviço, comprimento e densidade do cabelo. O mais importante é que reservamos tempo
+              suficiente para fazer tudo com calma, sem pressas.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Posso marcar com antecedência para um evento?</div>
+            <div class="faq-a">
+              Sim. Se tiver casamento, sessão fotográfica ou ocasião especial marcada, fale connosco com algum
+              tempo de antecedência para garantir o melhor horário para si.
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:0.6rem;">
+            Contactos & Localização
+          </h3>
+          <p class="contact-line">
+            <strong>Studio Maria's Beauty</strong><br>
+            Rua das Laranjeiras, n.º 44B<br>
+            Marrazes · Leiria, Portugal
+          </p>
+          <p class="contact-line">
+            <strong>WhatsApp:</strong><br>
+            <a id="whatsDisplay" href="#" target="_blank" rel="noopener">+351 927 698 772</a>
+          </p>
+          <p class="contact-line">
+            <strong>Instagram:</strong><br>
+            <a id="instaLink" href="https://www.instagram.com/studiomariasbeauty.e/" target="_blank" rel="noopener">@studiomariasbeauty.e</a>
+          </p>
+          <p class="contact-line">
+            <strong>E-mail:</strong><br>
+            <a href="mailto:studiosmariasbeauty@gmail.com">studiosmariasbeauty@gmail.com</a>
+          </p>
+          <p class="contact-line">
+            <strong>Horário:</strong><br>
+            Segunda a sexta das 10h00 às 17h00<br>
+            Sábado das 10h00 às 15h00
+          </p>
+
+          <div class="social-links">
+            <span class="social-pill" onclick="openWhatsApp()">WhatsApp</span>
+            <span class="social-pill" onclick="openInstagram()">Instagram</span>
+          </div>
+
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps?q=Rua+das+Laranjeiras+44B,+Marrazes,+Leiria,+Portugal&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <strong>Studio Maria's Beauty</strong>. Todos os direitos reservados.</span>
+      <span>Beleza, cuidado e exclusividade em cada detalhe.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ========= CONFIGURA OS TEUS DADOS AQUI =========
+    // Número do WhatsApp (só dígitos, com indicativo de país)
+    const phone = '351927698772';
+
+    // Link do Instagram
+    const instagramUrl = 'https://www.instagram.com/studiomariasbeauty.e/';
+    // ================================================
+
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+
+    // Abre WhatsApp com mensagem padrão
+    function openWhatsApp() {
+      const message = encodeURIComponent(
+        'Olá, gostaria de agendar um horário no Studio Maria\'s Beauty (Marrazes, Leiria). Pode ajudar-me a escolher o melhor dia e horário?'
+      );
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url, '_blank');
+    }
+
+    // Envia o formulário de marcação para o WhatsApp
+    function submitBookingForm(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const servico = document.getElementById('servico').value;
+      const quando = document.getElementById('quando').value.trim();
+      const obs = document.getElementById('obs').value.trim();
+
+      let texto = `Olá, gostaria de fazer uma marcação no Studio Maria's Beauty.%0A%0A`;
+      texto += `Nome: ${nome}%0A`;
+      if (telefone) texto += `WhatsApp da cliente: ${telefone}%0A`;
+      texto += `Serviço desejado: ${servico}%0A`;
+      if (quando) texto += `Melhor dia/horário: ${quando}%0A`;
+      if (obs) texto += `%0AObservações: ${obs}`;
+
+      const url = `https://wa.me/${phone}?text=${texto}`;
+      window.open(url, '_blank');
+    }
+
+    function openInstagram() {
+      if (!instagramUrl || instagramUrl === '#') return;
+      window.open(instagramUrl, '_blank');
+    }
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+
+    if (navToggle && navMobile) {
+      navToggle.addEventListener('click', () => {
+        navMobile.classList.toggle('show');
+      });
+
+      navMobile.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMobile.classList.remove('show');
+        });
+      });
+    }
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Atualiza links de contacto com base nas configs
+    const whatsDisplay = document.getElementById('whatsDisplay');
+    if (whatsDisplay && phone) {
+      whatsDisplay.href = `https://wa.me/${phone}`;
+    }
+
+    const instaLink = document.getElementById('instaLink');
+    if (instaLink && instagramUrl && instagramUrl !== '#') {
+      instaLink.href = instagramUrl;
+    }
+  </script>
+</body>
+</html>
